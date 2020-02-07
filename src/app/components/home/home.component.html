@@ -1,0 +1,30 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">PeliculasAPP</h1>
+        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+</div>
+<div class="row">
+
+
+    <div class="card-columns">
+        <div class="card" *ngFor="let pelicula of peliculas">
+            <img src="{{urlImage+pelicula.poster_path}}" class="card-img-top" alt="{{pelicula.title}}">
+            <div class="card-body">
+                <h5 class="card-title">{{pelicula.title}}</h5>
+                <p class="card-text">
+
+                    <span class="badge badge-pill badge-dark" placement="bottom" ngbTooltip="Clasificación: {{pelicula.vote_average}}"><ngb-rating [rate]="pelicula.vote_average"></ngb-rating></span>
+                    <span class="badge badge-pill badge-success" placement="bottom" ngbTooltip="Votos">{{pelicula.vote_count}}</span>
+
+
+                </p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">{{pelicula.release_date}}</small>
+            </div>
+        </div>
+
+
+    </div>
+</div>
